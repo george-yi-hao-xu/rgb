@@ -65,5 +65,11 @@
       </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
+    <script>
+        window.addEventListener("arjs-nft-loaded", (event) => {
+            // Hide loading overlay
+            document.getElementsByClassName("arjs-loader").style.display = "none";
+        });
+    </script>
   </body>
 </html>
