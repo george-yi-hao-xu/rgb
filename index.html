@@ -17,16 +17,35 @@
             animation="property: rotation; to: 0 360 0; loop: true; dur: 100"></a-entity>
         <a-marker-camera type="pattern" url="./descriptors/pattern-cmyk.patt"></a-marker-camera>
     </a-scene> -->
-    <a-scene embedded arjs='sourceType: webcam;'>
+    <a-scene embedded arjs='sourceType: webcam;detectionMode: mono_and_matrix;'>
         <!-- handle marker with your own pattern -->
+        <!-- testing -->
         <a-marker type='pattern' url='descriptors/pattern-cmyk.patt'>
           <!-- <a-box position='0 0.5 0' material='color: red;opacity: 0.5;'></a-box> -->
-          <a-entity gltf-model="./model/rgbModel/scene.gltf" rotation="0 0 0" scale="200 200 200" 
-            animation="property: rotation; to: 0 360 0; loop: true; dur: 100"></a-entity>
+          <a-entity 
+            gltf-model="./model/rgbModel/scene.gltf" 
+            rotation="0 0 0" scale="200 200 200" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 100" 
+            />
         </a-marker>
-        <a-marker type='pattern' url='descriptors/pattern-pillar.patt'>
-          <a-box position='0 0.5 0' material='color: blue;opacity: 0.5;'></a-box>
+        <!-- 5 testing -->
+        <a-marker type='barcode' value='5'>
+            <a-box position='0 0.5 0' material='color: blue; opacity: 0.1;' ></a-box>
+            <a-entity 
+                    gltf-model="./model/ding/scene.gltf" 
+                    position='0 0 0'
+                    rotation="90 90 270"
+                    animation="property: rotation; to: 360 0 0; loop: true; dur: 10000" 
+                    scale="1 1 1" 
+            />
         </a-marker>
+        
+        
+        <!-- 1 -->
+        <a-marker type='barcode' value='1'>
+            <a-box position='0 0.5 0' material='color: blue; opacity: 0.5;'></a-box>
+          </a-marker>
+
     
         <!-- handle marker with hiro preset -->
         <!-- <a-marker preset='hiro'>
